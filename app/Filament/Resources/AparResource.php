@@ -18,7 +18,7 @@ class AparResource extends Resource
     protected static ?string $model = Apar::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
+//
     public static function form(Form $form): Form
     {
         return $form
