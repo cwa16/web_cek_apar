@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('apars', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_apar', 10);
+            $table->string('kode_apar', 10)->unique();
             $table->index('kode_apar');
             $table->string('no_apar', 10);
             $table->string('dept', 50);
@@ -27,7 +27,6 @@ return new class extends Migration
             $table->date('last_refill');
             $table->date('next_refill');
             $table->string('standar_pengisian', 50);
-            $table->foreignId('rumah_apar_id')->references('id')->on('rumah_apars')->onDelete('cascade');
             $table->timestamps();
         });
     }

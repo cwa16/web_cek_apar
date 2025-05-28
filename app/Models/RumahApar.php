@@ -8,9 +8,8 @@ class RumahApar extends Model
 {
     protected $guarded = [];
 
-    // Relasi cek rumah apar
-    public function cek_rumah_apars()
+    public function cekRumahApars()
     {
-        return $this->hasMany(CekRumahApar::class);
+        return $this->hasMany(CekRumahApar::class, 'rumah_apar_id', 'rumah_apar_id');
     }
 }

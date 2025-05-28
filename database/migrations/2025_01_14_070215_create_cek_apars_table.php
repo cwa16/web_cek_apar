@@ -27,6 +27,12 @@ return new class extends Migration
             $table->boolean('nozzle');
             $table->boolean('karung_gone');
             $table->boolean('air_drum');
+            $table->string('pressure_gauge_image')->nullable();
+            $table->string('seal_image')->nullable();
+            $table->string('handgrip_image')->nullable();
+            $table->string('tabung_image')->nullable();
+            $table->string('selang_image')->nullable();
+            $table->string('nozzle_image')->nullable();
             $table->timestamps();
         });
     }

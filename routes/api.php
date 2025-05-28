@@ -10,3 +10,4 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/get-apar', [ApiController::class, 'getApar']);
 Route::post('/save-checklist', [ApiController::class, 'saveChecklist']);
+Route::post('/save-checklist-rumah', [ApiController::class, 'saveChecklistRumah']);

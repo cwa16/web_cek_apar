@@ -12,28 +12,43 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CekRumahAparsRelationManager extends RelationManager
 {
-    protected static string $relationship = 'cek_rumah_apars';
+    protected static string $relationship = 'cekRumahApars';
 
     public function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('cek_rumah_apars')
-                    ->required()
-                    ->maxLength(255),
+                   Forms\Components\DatePicker::make('tgl')->required(),
+                    Forms\Components\Toggle::make('drum'),
+                    Forms\Components\Toggle::make('gone'),
+                    Forms\Components\Toggle::make('kerusakan_box'),
+                    Forms\Components\Toggle::make('kebersihan_box'),
+                    Forms\Components\Toggle::make('gembok'),
+                    Forms\Components\Toggle::make('kebersihan_drum'),
+                    Forms\Components\Select::make('judge')
+                        ->options([
+                            'OK' => 'OK',
+                            'Not OK' => 'Not OK',
+                        ])
+                        ->required(),
             ]);
     }
 
     public function table(Table $table): Table
     {
         return $table
-            ->recordTitleAttribute('cek_rumah_apars')
+        ->recordTitleAttribute('rumah_apar_id')
             ->columns([
-                Tables\Columns\TextColumn::make('cek_rumah_apars'),
+                Tables\Columns\TextColumn::make('tgl')->date(),
+                Tables\Columns\IconColumn::make('drum')->boolean(),
+                Tables\Columns\IconColumn::make('gone')->boolean(),
+                Tables\Columns\IconColumn::make('kerusakan_box')->boolean(),
+                Tables\Columns\IconColumn::make('kebersihan_box')->boolean(),
+                Tables\Columns\IconColumn::make('gembok')->boolean(),
+                Tables\Columns\IconColumn::make('kebersihan_drum')->boolean(),
+                Tables\Columns\TextColumn::make('judge'),
             ])
-            ->filters([
-                //
-            ])
+            ->filters([])
             ->headerActions([
                 Tables\Actions\CreateAction::make(),
             ])
@@ -42,9 +57,7 @@ class CekRumahAparsRelationManager extends RelationManager
                 Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
 }

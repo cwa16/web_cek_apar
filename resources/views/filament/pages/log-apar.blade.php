@@ -34,9 +34,9 @@
                                 : '⭕' !!}
                         </td>
                         <td class="border border-gray-300 px-4 py-2">{!! $apar->handgrip == 0 ? "<span class='x-symbol' data-image='".asset($apar->handgrip_image)."'>❌</span>" : '⭕' !!}</td>
-                        <td class="border border-gray-300 px-4 py-2">{!! $apar->tabung == 0 ? "<span class='x-symbol' data-image='".asset($apar->tabung)."'>❌</span>" : '⭕' !!}</td>
-                        <td class="border border-gray-300 px-4 py-2">{!! $apar->selang == 0 ? "<span class='x-symbol' data-image='".asset($apar->selang)."'>❌</span>" : '⭕' !!}</td>
-                        <td class="border border-gray-300 px-4 py-2">{!! $apar->nozzle == 0 ? "<span class='x-symbol' data-image='".asset($apar->nozzle)."'>❌</span>" : '⭕' !!}</td>
+                        <td class="border border-gray-300 px-4 py-2">{!! $apar->tabung == 0 ? "<span class='x-symbol' data-image='".asset($apar->tabung_image)."'>❌</span>" : '⭕' !!}</td>
+                        <td class="border border-gray-300 px-4 py-2">{!! $apar->selang == 0 ? "<span class='x-symbol' data-image='".asset($apar->selang_image)."'>❌</span>" : '⭕' !!}</td>
+                        <td class="border border-gray-300 px-4 py-2">{!! $apar->nozzle == 0 ? "<span class='x-symbol' data-image='".asset($apar->nozzle_image)."'>❌</span>" : '⭕' !!}</td>
                         <td class="border border-gray-300 px-4 py-2">{{ $apar->result }}</td>
                         <td class="border border-gray-300 px-4 py-2">{{ $apar->remark }}</td>
                     </tr>

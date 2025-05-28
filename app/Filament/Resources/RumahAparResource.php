@@ -23,7 +23,7 @@ class RumahAparResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('kode_rumah_apar')
+                Forms\Components\TextInput::make('rumah_apar_id')
                 ->required(),
                 Forms\Components\TextInput::make('lokasi')
                 ->required(),
@@ -36,7 +36,7 @@ class RumahAparResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('kode_rumah_apar')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('rumah_apar_id')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('lokasi')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('dept')->searchable()->sortable(),
             ])
@@ -57,7 +57,7 @@ class RumahAparResource extends Resource
     public static function getRelations(): array
     {
         return [
-            // RelationManagers\RumahAparResource::getRelations()
+              RelationManagers\CekRumahAparsRelationManager::class,
         ];
     }
 
